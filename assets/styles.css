@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  color: #fff;
+  text-align: center;
+}
+
+/* شاشة البداية */
+#startScreen {
+  padding-top: 100px;
+}
+
+#startScreen h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #00ffcc;
+}
+
+#startScreen p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* الأزرار */
+button {
+  background: #00ffcc;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00ccaa;
+  transform: scale(1.05);
+}
+
+/* شاشة الشحن */
+#shopScreen {
+  padding-top: 50px;
+}
+
+#shopScreen h2 {
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+/* تحسين العرض على الجوال */
+@media (max-width: 600px) {
+  button {
+    width: 80%;
+    font-size: 18px;
+  }
+}
