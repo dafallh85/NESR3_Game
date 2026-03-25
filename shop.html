@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>شحن NESR3</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+<h1>💰 شحن حسابك</h1>
+
+<button onclick="charge('NES3')">NES3</button>
+<button onclick="charge('DAF1')">DAF1</button>
+<button onclick="charge('USDT')">USDT</button>
+<button onclick="charge('USDG')">USDG</button>
+
+<br><br>
+
+<button onclick="alert('قريباً Apple Pay')">💳 Apple Pay</button>
+<button onclick="alert('قريباً بطاقة')">💳 بطاقة بنكية</button>
+
+<script>
+function charge(currency){
+  let link = "";
+
+  if(currency === "NES3") link = "PUT_LINK";
+  if(currency === "DAF1") link = "PUT_LINK";
+  if(currency === "USDT") link = "PUT_LINK";
+  if(currency === "USDG") link = "PUT_LINK";
+
+  window.open(link, "_blank");
+}
+</script>
+
+</body>
+</html>
