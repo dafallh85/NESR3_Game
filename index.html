@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🦅 لعبة NESR3 الخيالية</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🦅 لعبة NESR3 الخيالية</h1>
+<p>اختر عالمك، اجمع النقاط، وحوّلها إلى العملات الرقمية!</p>
+
+<div class="box">
+<h3>🌍 اختر العالم:</h3>
+<button onclick="selectWorld('الجو')">🦅 الجو</button>
+<button onclick="selectWorld('المدينة')">🚗 المدينة</button>
+<button onclick="selectWorld('البحار')">🌊 البحار</button>
+<button onclick="selectWorld('الغابات')">🌳 الغابات</button>
+<button onclick="selectWorld('المدن')">🏙️ المدن</button>
+</div>
+
+<div class="box">
+<h3>💰 شحن العملات الرقمية:</h3>
+<button onclick="payCrypto('NES3')">NES3</button>
+<button onclick="payCrypto('DAF1')">DAF1</button>
+<button onclick="payCrypto('USDT')">USDT</button>
+<button onclick="payCrypto('USDG')">USDG</button>
+</div>
+
+<div class="box">
+<p>النقاط: <span id="score">0</span></p>
+<p>NES3: <span id="nes3">0</span></p>
+<p>DAF1: <span id="daf1">0</span></p>
+<p>USDT: <span id="usdt">0</span></p>
+<p>USDG: <span id="usdG">0</span></p>
+<p>المستوى: <span id="level">1</span></p>
+<p>العالم الحالي: <span id="currentWorld">-</span></p>
+<img id="worldImage" class="world-img" src="assets/placeholder.png" alt="العالم">
+</div>
+
+<div class="box">
+<button onclick="collectPoints()">اجمع نقاط!</button>
+<button onclick="convertPoints('NES3')">حول نقاطك إلى NES3</button>
+<button onclick="convertPoints('DAF1')">حول نقاطك إلى DAF1</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
