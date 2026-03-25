@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>NESR3 Game 🚗</title>
+
+<style>
+body { margin:0; overflow:hidden; background:#000; color:#fff; font-family:Arial; }
+
+#menu {
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:10;
+}
+
+button {
+  display:block;
+  margin:10px;
+  padding:10px 20px;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+<div id="menu">
+  <h2>🦅 NESR3 Game</h2>
+  <button onclick="startGame()">🚗 ابدأ اللعب</button>
+  <button onclick="openShop()">💰 شحن</button>
+</div>
+
+<script>
+let scene, camera, renderer, car;
+
+function startGame(){
+  document.getElementById('menu').style.display = 'none';
+
+  scene = new THREE.Scene();
+
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+  camera.position.set(0,5,10);
+
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // الطريق
+  const roadGeo = new THREE.PlaneGeometry(50,200);
+  const roadMat = new THREE.MeshBasicMaterial({color:0x333333});
+  const road = new THREE.Mesh(roadGeo, roadMat);
+  road.rotation.x = -Math.PI/2;
+  scene.add(road);
+
+  // السيارة
+  const carGeo = new THREE.BoxGeometry(2,1,4);
+  const carMat = new THREE.MeshBasicMaterial({color:0xff0000});
+  car = new THREE.Mesh(carGeo, carMat);
+  car.position.y = 0.5;
+  scene.add(car);
+
+  // تحكم
+  document.addEventListener('keydown', e=>{
+    if(e.key === "ArrowLeft") car.position.x -= 0.5;
+    if(e.key === "ArrowRight") car.position.x += 0.5;
+    if(e.key === "ArrowUp") car.position.z -= 0.5;
+    if(e.key === "ArrowDown") car.position.z += 0.5;
+  });
+
+  function animate(){
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+function openShop(){
+  window.location.href = "shop.html";
+}
+</script>
+
+</body>
+</html>
