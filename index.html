@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>NESR3 Game – ابدأ المغامرة</title>
+
+<link rel="stylesheet" href="assets/styles.css">
+
+<!-- مكتبات 3D جاهزة -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+
+<style>
+body { background:#111; color:#fff; text-align:center; }
+button { padding:10px 20px; margin:10px; font-size:16px; }
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">
+  <h1>🦅 NESR3 Game</h1>
+  <p>اختر عالمك وابدأ المغامرة</p>
+
+  <button onclick="startWorld('cars')">🚗 سيارات</button>
+  <button onclick="startWorld('eagle')">🦅 النسر</button>
+  <button onclick="startWorld('sea')">🌊 البحار</button>
+  <button onclick="startWorld('forest')">🌳 الغابات</button>
+  <button onclick="startWorld('city')">🏙 المدن</button>
+</div>
+
+<div id="shopScreen" style="display:none;">
+  <h2>💰 شحن حسابك</h2>
+
+  <button onclick="charge('NES3')">NES3</button>
+  <button onclick="charge('DAF1')">DAF1</button>
+  <button onclick="charge('USDT')">USDT</button>
+  <button onclick="charge('USDG')">USDG</button>
+
+  <button onclick="applePay()">💳 Apple Pay</button>
+  <button onclick="cardPay()">💳 بطاقة بنكية</button>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+// اختيار العالم
+function startWorld(world){
+  document.getElementById('startScreen').style.display='none';
+  document.getElementById('shopScreen').style.display='block';
+  initGame(world);
+}
+
+// روابط الشحن
+function charge(currency){
+  let link = "";
+  if(currency === "NES3") link = "https://bscscan.com/address/0x6E2dad6405bF68Ffcda0dCD551f10EB029E29313";
+  if(currency === "DAF1") link = "https://bscscan.com/address/0x0C9a6b4Bd24d69812b8f3a71a56DA686C9110012";
+  if(currency === "USDT") link = "https://bscscan.com/address/USDT_CONTRACT";
+  if(currency === "USDG") link = "https://bscscan.com/address/USDG_CONTRACT";
+
+  window.open(link, "_blank");
+}
+
+// Apple Pay
+function applePay(){
+  alert("سيتم تفعيل Apple Pay لاحقاً");
+}
+
+// بطاقة بنكية
+function cardPay(){
+  alert("سيتم تفعيل الدفع بالبطاقة لاحقاً");
+}
+</script>
+
+</body>
+</html>
