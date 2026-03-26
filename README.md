@@ -1,42 +1,52 @@
-# لعبة NESR3 🚗🦅
+NESR3 Game 🚗🦅
+A 3D car game connected to the NES3 and DAF1 cryptocurrencies on the BNB network (BEP-20).
 
-لعبة سيارات ثلاثية الأبعاد متصلة بالعملات الرقمية **NES3** و **DAF1** على شبكة BNB (BEP-20).  
-يمكنك ربط محفظتك، شحن اللعبة، شراء العملات داخل اللعبة، أو سحب المكافآت إلى محفظتك مباشرة.
+You can link your wallet, top up the game, buy in-game currency, or withdraw rewards directly to your wallet.
 
----
+Game Features
 
-## ميزات اللعبة
+🚗 A variety of cars and different levels.
 
-- 🚗 سيارات متنوعة ومستويات مختلفة.
-- 🏆 مكافآت بالعملات الرقمية **NES3 / DAF1** عند اجتياز العقبات.
-- 🔗 ربط محفظة MetaMask للعب وتحويل العملات.
-- 💰 إمكانية الإيداع والشراء داخل اللعبة.
-- 🎮 Canvas / WebGL للعب في المتصفح.
-- 👥 دعم Multiplayer وLeaderboard (مستقبليًا).
-- 🚓 وجود الشرطة ومهام إضافية (مستقبليًا).
+🏆 Rewards in NES3/DAF1 cryptocurrency for overcoming obstacles.
 
----
+🔗 Link your MetaMask wallet to play and transfer currency.
 
-## روابط عقود العملات
+💰 Deposit and make in-game purchases.
 
-- **NES3**: `0x9b4b566ca7d64acb51174187b0fb430f2aa2962b`  
-- **DAF1**: `0x28227c3bb846f716cff8c7b4328dfc28fd3d3819`
+🎮 Canvas/WebGL for browser play.
 
-> ملاحظة: هذه العقود على شبكة BNB (BEP-20).
+👥 Multiplayer and Leaderboard support (coming soon).
+
+🚓 Police presence and bonus missions (coming soon).
 
 ---
 
-## كيفية التشغيل
-
-1. افتح المستودع على GitHub Pages أو سيرفر ويب.
-2. افتح الملف `index.html` في المتصفح.
-3. استخدم زر **ربط المحفظة** للاتصال بـ MetaMask.
-4. استخدم زر **إيداع NES3 / DAF1** لشحن اللعبة.
-5. استخدم زر **شراء NES3 / DAF1** لشراء العملات بالريال السعودي (قريبًا).
-6. عند الفوز بالعملات داخل اللعبة، يمكنك سحبها إلى محفظتك عبر زر **سحب العملات**.
-
----
+#
 
 ## تركيب اللعبة على المستودع
+# Currency Contract Links
 
+- **NES3**: `0x9b4b566ca7d64acb51174187b0fb430f2aa2962b`
+
+- **DAF1**: `0x28227c3bb846f716cff8c7b4328dfc28fd3d3819`
+
+> Note: These contracts are on the BNB network (BEP-20).
+
+---
+
+## How to Use
+
+1. Open the repository on GitHub Pages or a web server.
+
+2. Open the `index.html` file in your browser.
+
+3. Use the **Link Wallet** button to connect to MetaMask.
+
+4. Use the **Deposit NES3/DAF1** button to top up your game.
+
+5. Use the **Buy NES3/DAF1** button to purchase currency in Saudi Riyals (coming soon).
+
+6. When you win in-game coins, you can withdraw them to your wallet using the **Withdraw Coins** button.
+
+---
 يجب أن يحتوي المستودع على:
