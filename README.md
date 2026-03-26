@@ -23,7 +23,7 @@ Game Features
 
 #
 
-## تركيب اللعبة على المستودع
+#
 # Currency Contract Links
 
 - **NES3**: `0x9b4b566ca7d64acb51174187b0fb430f2aa2962b`
@@ -49,4 +49,4 @@ Game Features
 6. When you win in-game coins, you can withdraw them to your wallet using the **Withdraw Coins** button.
 
 ---
-يجب أن يحتوي المستودع على:
+:
