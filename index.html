@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NESR3 GAME</title>
+
+<!-- ربط التصميم -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div id="game">
+  <canvas id="canvas" width="800" height="500"></canvas>
+</div>
+
+<div id="ui">
+  <button onclick="connectWallet()">ربط المحفظة</button>
+  <button onclick="depositTokens()">إيداع</button>
+  <button onclick="buyTokens()">شراء</button>
+  <button onclick="withdrawFromGame()">سحب</button>
+  <span id="status">غير متصل</span>
+</div>
+
+<!-- Web3 -->
+<script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+<script src="web3.js"></script>
+
+<script>
+// ===== اللعبة =====
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+
+let carX = 350;
+let gameWallet = { NES3:0, DAF1:0 };
+
+function draw() {
+  ctx.clearRect(0,0,800,500);
+
+  // السيارة
+  ctx.fillStyle="lime";
+  ctx.fillRect(carX,400,80,50);
+
+  // عرض العملات
+  ctx.fillStyle="white";
+  ctx.fillText("NES3: "+gameWallet.NES3,10,20);
+  ctx.fillText("DAF1: "+gameWallet.DAF1,10,40);
+
+  requestAnimationFrame(draw);
+}
+
+// التحكم
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="ArrowLeft") carX-=20;
+  if(e.key==="ArrowRight") carX+=20;
+
+  // كسب عملة
+  if(e.key==="ArrowUp"){
+    gameWallet.NES3+=1;
+    gameWallet.DAF1+=1;
+  }
+});
+
+draw();
+</script>
+
+</body>
+</html>
