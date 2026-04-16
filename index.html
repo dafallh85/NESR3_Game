@@ -1,0 +1,245 @@
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAME NESR3</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url("images/bg.jpg") no-repeat center center fixed;
+background-size:cover;
+color:white;
+text-align:center;
+}
+
+.hidden{display:none;}
+
+h1{font-size:42px;margin:10px;}
+h2{margin:5px;}
+
+.center{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,0.7);
+padding:25px;
+border-radius:12px;
+width:320px;
+}
+
+button{
+padding:10px 16px;
+margin:6px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#22c55e;
+color:white;
+}
+
+input,select{
+padding:10px;
+margin:6px;
+border-radius:6px;
+width:90%;
+}
+
+.top-right{
+position:absolute;
+top:10px;
+right:10px;
+}
+
+#walletBox{
+background:rgba(0,0,0,0.7);
+padding:15px;
+border-radius:12px;
+margin:15px auto;
+width:320px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="center">
+<h1>GAME NESR3</h1>
+<h3>Welcome to Digital Future Games</h3>
+
+<h2>Login</h2>
+<input id="email" placeholder="Email">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+<div class="top-right">
+<button onclick="openWallet()">💼 Connect Wallet</button>
+</div>
+
+<h1>GAME NESR3</h1>
+<h3>Welcome to Digital Future Games</h3>
+<h2>Choose Your Game</h2>
+
+<button onclick="startGame()">NESR3 Game</button>
+<button onclick="startGame()">Car Game</button>
+<button onclick="startGame()">Sea Game</button>
+
+</div>
+
+<!-- GAME -->
+<div id="game" class="hidden">
+<h2>Game Running...</h2>
+<button onclick="earn()">Earn</button>
+<button onclick="back()">Back</button>
+</div>
+
+<!-- WALLET -->
+<div id="wallet" class="hidden">
+
+<h1>💼 Game Wallet</h1>
+
+<div id="walletBox">
+<h3>📊 My Balance (رصيدي)</h3>
+<div id="balances"></div>
+</div>
+
+<h3>💰 Deposit</h3>
+<select>
+<option>USDT</option>
+<option>BTC</option>
+<option>BNB</option>
+<option>SOL</option>
+<option>USDC</option>
+<option>USDG</option>
+<option>DAF1</option>
+<option>NES3</option>
+<option>DAYF</option>
+<option>NOR4</option>
+<option>DAF7</option>
+<option>SMR99</option>
+</select>
+<button onclick="deposit()">Crypto Deposit</button>
+<button onclick="bank()">Bank Card</button>
+<button onclick="apple()">Apple Store</button>
+
+<h3>🔁 Transfer</h3>
+<select id="from"></select>
+<select id="to"></select>
+<input id="amount" placeholder="Amount">
+<button onclick="transfer()">Transfer</button>
+
+<br><br>
+<button onclick="back()">⬅ Back</button>
+</div>
+
+<!-- CONNECT -->
+<div class="top-right hidden" id="walletBtn">
+<button onclick="openWallet()">💼 Wallet</button>
+</div>
+
+<script>
+
+// العملات
+let coins = {
+USDT:0, BTC:0, BNB:0, SOL:0, USDC:0, USDG:0,
+DAF1:0, NES3:0, DAYF:0, NOR4:0, DAF7:0, SMR99:0
+};
+
+// LOGIN
+function login(){
+let email=document.getElementById('email').value;
+let pass=document.getElementById('pass').value;
+
+if(email && pass){
+hideAll();
+document.getElementById('dashboard').classList.remove('hidden');
+update();
+fillSelect();
+}
+}
+
+// NAV
+function hideAll(){
+document.querySelectorAll('body > div').forEach(d=>d.classList.add('hidden'));
+}
+
+function back(){
+hideAll();
+document.getElementById('dashboard').classList.remove('hidden');
+update();
+}
+
+// GAME
+function startGame(){
+hideAll();
+document.getElementById('game').classList.remove('hidden');
+}
+
+function earn(){
+coins.NES3 += 10;
+coins.DAF1 += 5;
+update();
+}
+
+// WALLET
+function openWallet(){
+hideAll();
+document.getElementById('wallet').classList.remove('hidden');
+update();
+fillSelect();
+}
+
+function update(){
+let html="";
+for(let c in coins){
+html+="<p>"+c+" : "+coins[c]+"</p>";
+}
+document.getElementById('balances').innerHTML=html;
+}
+
+function fillSelect(){
+let from=document.getElementById("from");
+let to=document.getElementById("to");
+
+from.innerHTML="";
+to.innerHTML="";
+
+for(let c in coins){
+from.innerHTML+="<option>"+c+"</option>";
+to.innerHTML+="<option>"+c+"</option>";
+}
+}
+
+// TRANSFER
+function transfer(){
+let f=document.getElementById("from").value;
+let t=document.getElementById("to").value;
+let a=parseFloat(document.getElementById("amount").value);
+
+if(a>0 && coins[f]>=a){
+coins[f]-=a;
+coins[t]+=a;
+update();
+alert("Transfer Done");
+}
+}
+
+// DEPOSIT OPTIONS
+function deposit(){alert("Crypto Deposit (Coming Soon)");}
+function bank(){alert("Bank Card (Coming Soon)");}
+function apple(){alert("Apple Store (Coming Soon)");}
+
+</script>
+
+</body>
+</html
