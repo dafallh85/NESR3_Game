@@ -36,6 +36,7 @@ body{
   margin:auto;
   background:#111;
   position:relative;
+  overflow:hidden;
 }
 
 #car{
@@ -43,21 +44,24 @@ body{
   bottom:20px;
   width:60px;
   height:80px;
-  background:url('assets/car.png') center/cover;
+  background:url('assets/car.png') no-repeat center;
+  background-size:contain;
 }
 
 .enemy{
   position:absolute;
   width:60px;
   height:80px;
-  background:url('assets/enemy.png') center/cover;
+  background:url('assets/enemy.png') no-repeat center;
+  background-size:contain;
 }
 
 .coin{
   position:absolute;
   width:30px;
   height:30px;
-  background:url('assets/coin.png') center/cover;
+  background:url('assets/coin.png') no-repeat center;
+  background-size:contain;
 }
 
 .coin.main{
