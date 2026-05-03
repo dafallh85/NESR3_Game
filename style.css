@@ -1,0 +1,66 @@
+body{
+  margin:0;
+  background:black;
+  color:white;
+  text-align:center;
+  font-family:Arial;
+}
+
+#welcome{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.wallet-btn{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:gold;
+  color:black;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+}
+
+.page{display:none;}
+
+#game{
+  width:400px;
+  height:600px;
+  margin:auto;
+  background:#111;
+  position:relative;
+}
+
+#car{
+  position:absolute;
+  bottom:20px;
+  width:60px;
+  height:80px;
+  background:url('assets/car.png') center/cover;
+}
+
+.enemy{
+  position:absolute;
+  width:60px;
+  height:80px;
+  background:url('assets/enemy.png') center/cover;
+}
+
+.coin{
+  position:absolute;
+  width:30px;
+  height:30px;
+  background:url('assets/coin.png') center/cover;
+}
+
+.coin.main{
+  background:gold;
+  color:black;
+}
